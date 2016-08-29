@@ -3,11 +3,12 @@
 A program which present the top three Google suggestions for a given string. The program is inspired by the project [Glaciers by Zach Gage](http://www.postmastersart.com/archive/gage16/gage16direct.html).
 
 Example run:
+
 ```
-runhaskell hauto-poetry.hs
-Enter query: i am afraid of
+runhaskell hautocomplete-poetry.hs 
+Enter query: should i
 Fetching top three suggestions from Google:
-  i am afraid of death
-  i am afraid of losing you
-  i am afraid of heights
+  should i text him
+  should i cut my hair
+  should i quit my job
 ```
