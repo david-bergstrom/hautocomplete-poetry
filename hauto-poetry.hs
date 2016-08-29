@@ -27,7 +27,7 @@ getSuggestions query = do
   body <- getResponseBody rsp
   return (extractSuggestions body)
 
-printSuggestions String -> IO ()
+printSuggestions :: String -> IO ()
 printSuggestions line = do
   suggestions <- getSuggestions line
   putStrLn $ "  " ++ (intercalate "\n  " $ take 3 suggestions)
