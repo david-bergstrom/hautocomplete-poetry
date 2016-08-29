@@ -14,13 +14,15 @@ getWords text = map head (text =~ expression)
 
 -- The first word is the query itself
 extractSuggestions :: String -> [String]
-extractSuggestions = (drop 1) . getWords
+extractSuggestions = (drop 2) . getWords
 
+-- Convert a string to a query url
 getUrl :: String -> String
 getUrl query = "http://suggestqueries.google.com/complete/search?client=firefox&q=" ++ (escape query)
                where                 
                  escape = replace " " "%20"
 
+-- Get suggestions from Google's auto complete
 getSuggestions :: String -> IO [String]
 getSuggestions query = do
   rsp <- Network.HTTP.simpleHTTP (getRequest $ getUrl query)
